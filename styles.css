@@ -1,0 +1,189 @@
+/* 이서윤체 폰트 적용을 위한 코드 */
+@font-face {
+  font-family: "LeeSeoyun";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 프리트 영역 설정 */
+/* 인쇄 시 버튼을 숨깁니다 */
+@media print {
+  .buttons, .round-button {
+      display: none !important;
+  }
+}
+
+body {
+  font-family: "LeeSeoyun";
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #ecf3be;
+}
+
+
+/* body태그 자체에 css 요소 부여 */
+body {
+  font-family: "LeeSeoyun";
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #ecf3be;
+}
+
+.container {
+  width: 385px;
+  height: 575px;
+  background-color: #ffffff;
+}
+
+.photos::before {
+  width: 100%;
+  background-color: #ff9d73;
+  justify-content: center;
+}
+
+.photos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.photo-frame {
+  background-color: white;
+  width: calc(50% - 15.5px);
+  padding-top: 26%;
+  position: relative;
+  border: 4px solid #ff9d73;
+}
+
+.photo-frame img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.f-title {
+  font-size: 25px;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.f-date {
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+}
+
+.photo-description {
+  color: rgb(98, 98, 98);
+  background-color: rgb(255, 255, 255);
+  width: fit-content;
+  padding: 2px 4px;
+  margin-bottom: -14px;
+  border-radius: 10px;
+  font-size: 13px;
+  position: absolute;
+  bottom: 0;
+  transform: translateX(-50%);
+  left: 50%;
+  text-align: center;
+}
+
+/* 하단 영역 */
+.my_bg {
+  background-image: url("../img/back-ch1.png");
+  background-size: cover;
+  position: relative;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* 예향포토존 및 2023.10.21 텍스트 스타일 */
+.my_bg::before {
+  content: "예향포토존 ";
+  white-space: pre;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(88, 88, 88);
+  font-size: 25px;
+  font-weight: 900;
+  z-index: 2;
+  display: inline;
+  background-image: url("img/logo.png");
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  padding-left: 30px;
+}
+
+.my_bg::after {
+  content: "2023.10.21";
+  white-space: pre;
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(88, 88, 88);
+  font-size: 15px;
+  font-weight: 500;
+  z-index: 2;
+}
+
+/* 버튼 css */
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.round-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  margin: 0 10px;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 버튼 색상 클래스 */
+.red {
+  background-color: #ff9d73;
+}
+
+.blue {
+  background-color: rgb(238, 185, 231);
+}
+
+.green {
+  background-color: rgb(180, 238, 180);
+}
+
+.yellow {
+  background-color: rgb(175, 248, 220);
+}
+
+.purple {
+  background-color: rgba(0, 0, 0, 0);
+}
+</style>

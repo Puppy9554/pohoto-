@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>코딩네컷</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+
+
+</head>
+<style>
+  .photo-frame img {
+    height: 100%;
+    width: 100%;
+    display:block;
+    margin:auto;
+  }
+
+  input {
+    display: none;
+  }
+
+
+</style>
+
+
+<script>
+
+  function readURL(input, name) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      var img = new Image();
+      
+      reader.onload = function (e) {
+        document.getElementById(name).src = 
+        e.target.result;
+      };
+      
+      reader.readAsDataURL(input.files[0]);
+    } else {
+      document.getElementById(name).src = "";
+    }
+  }
+  function fileSelect(name) {
+    name.click();
+    
+  }
+
+ 
+
+</script>
+
+<body>
+    
+  <div class="container" id="my-div">
+    <div class="photos" >
+      <div id="image1" class="photo-frame" onclick="fileSelect($('#file1'))">
+        <img id="preview1" alt="">
+        <span id="desc1" class="photo-description">
+          믿음의 공동체
+        </span>
+      </div>
+      <div id="image2" class="photo-frame" onclick="fileSelect($('#file2'))">
+        <img id="preview2" alt="">
+        <span id="desc2" class="photo-description">
+            믿음의 공동체
+        </span>
+      </div>
+      <div id="image3" class="photo-frame" onclick="fileSelect($('#file3'))">
+        <img id="preview3" alt="">
+        <span id="desc3" class="photo-description">
+          소망의 공동체
+        </span>
+      </div>
+      <div id="image4" class="photo-frame" onclick="fileSelect($('#file4'))">
+        <img id="preview4" alt="">
+        <span id="desc4" class="photo-description">
+            소망의 공동체
+        </span>
+      </div>
+      <div id="image5" class="photo-frame" onclick="fileSelect($('#file5'))">
+        <img id="preview5" alt="">
+        <span id="desc5" class="photo-description">
+          사랑의 공동체
+        </span>
+      </div>
+      <div id="image6" class="photo-frame" onclick="fileSelect($('#file6'))">
+        <img id="preview6" alt="">
+        <span id="desc6" class="photo-description">
+            사랑의 공동체
+        </span>
+      </div>
+      <div id="image7" class="photo-frame" onclick="fileSelect($('#file7'))">
+        <img id="preview7" alt="">
+        <span id="desc7" class="photo-description">
+          예향  교회
+        </span>
+      </div>
+      <div id="image8" class="photo-frame" onclick="fileSelect($('#file8'))">
+        <img id="preview8" alt="">
+        <span id="desc8" class="photo-description">
+            예향  교회
+        </span>
+      </div>
+    </div>
+    <div class="footer">
+    <div class="my_div my_bg"></div>
+     
+  
+    
+    
+    </div>
+  </div>
+
+
+  <input type="file" onchange="readURL(this, 'preview1');" id="file1">
+  <input type="file" onchange="readURL(this, 'preview2');" id="file2">
+  <input type="file" onchange="readURL(this, 'preview3');" id="file3">
+  <input type="file" onchange="readURL(this, 'preview4');" id="file4">
+  <input type="file" onchange="readURL(this, 'preview5');" id="file5">
+  <input type="file" onchange="readURL(this, 'preview6');" id="file6">
+  <input type="file" onchange="readURL(this, 'preview7');" id="file7">
+  <input type="file" onchange="readURL(this, 'preview8');" id="file8">
+
+
+</body>
+
+<div class="buttons">
+  <button id="changeBorderColorRed" class="round-button red" data-color="#ff9d73">주황</button>
+    <button id="changeBorderColorBlue" class="round-button blue" data-color="rgb(238, 185, 231)">핑크</button>
+    <button id="changeBorderColorGreen" class="round-button green" data-color="rgb(180, 238, 180)">초록</button>
+    <button id="changeBorderColorYellow" class="round-button yellow" data-color="rgb(175, 248, 220)">연두</button>
+    <button id="changeBorderColorPurple" class="round-button purple" data-color="rgb(0, 0, 0)">검정</button>
+      
+</div>
+<script>
+  // 버튼 요소 가져오기
+  const changeColorButtons = document.querySelectorAll(".round-button");
+  const photoFrames = document.querySelectorAll(".photo-frame");
+
+  // 각 버튼에 대한 이벤트 처리
+  changeColorButtons.forEach(button => {
+      button.addEventListener("click", function () {
+          // data-color 속성에서 색상 가져오기
+          const colorClass = this.getAttribute("data-color");
+
+          // 모든 .photo-frame 요소의 border 색상 변경
+          photoFrames.forEach(frame => {
+              frame.style.border = `4px solid ${colorClass}`;
+          });
+      });
+  });
+</script>
+
+
+
+
+</html>
